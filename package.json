@@ -1,19 +1,23 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Lucas Souza's Portfolio Website",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx @tailwindcss/cli -i ./input.css -o ./index.css --watch",
-    "build": "npx @tailwindcss/cli -i ./input.css -o ./index.css -m --optimize"
+    "dev": "bunx @tailwindcss/cli -i ./src/styles.css -o ./src/index.css --watch",
+    "build": "bun run build.js",
+    "build:gzip": "bun run build.js --gzip",
+    "preview": "bunx serve dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lucas Souza",
   "license": "ISC",
   "packageManager": "pnpm@10.20.0",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0"
   }
 }
