@@ -1,0 +1,11 @@
+# Allow all crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Disallow build/development directories
+Disallow: /node_modules/
+Disallow: /dist/
+
+# Sitemap location
+Sitemap: https://lucassouza.dev/sitemap.xml

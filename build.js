@@ -46,6 +46,23 @@ if (faviconExists) {
   console.log("⚠️  No favicon.ico found, skipping...");
 }
 
+// Copy SEO files
+console.log("🔍 Copying SEO files...");
+const robotsExists = await Bun.file("robots.txt").exists();
+const sitemapExists = await Bun.file("sitemap.xml").exists();
+
+if (robotsExists) {
+  await $`cp robots.txt dist/robots.txt`;
+} else {
+  console.log("⚠️  No robots.txt found, skipping...");
+}
+
+if (sitemapExists) {
+  await $`cp sitemap.xml dist/sitemap.xml`;
+} else {
+  console.log("⚠️  No sitemap.xml found, skipping...");
+}
+
 // Optional Gzip compression
 if (shouldGzip) {
   console.log("🗜️  Gzipping files...");
